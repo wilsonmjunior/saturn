@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "saturn",
+    "slug": "saturn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
