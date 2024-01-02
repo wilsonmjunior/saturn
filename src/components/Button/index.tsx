@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
-import { useStyles } from "../../config/unistyles";
+import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
 
