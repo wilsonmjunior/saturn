@@ -3,8 +3,12 @@ export const colors = {
   secondary: '#283618',
 
   white: '#ffffff',
-  black: '#222222',
+  black: '#000000',
 
-  background: '#fefae0',
+  background: '#222222',
   shape: '#dda15e',
+
+  icon: {
+    gray: '#999999', 
+  }
 };

@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
 import { UnistylesTheme } from 'react-native-unistyles';
 
-import { theme } from '../../config/unistyles';
+import { theme } from '@/config/unistyles';
 
 export default function TabsLayout() {
   return (
