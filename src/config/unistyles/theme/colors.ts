@@ -6,7 +6,7 @@ export const colors = {
   black: '#000000',
 
   background: '#222222',
-  shape: '#dda15e',
+  shape: '#454242',
 
   icon: {
     gray: '#999999', 
