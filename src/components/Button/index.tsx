@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Text } from "react-native";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
@@ -10,17 +11,19 @@ type ButtonProps = RectButtonProps & {
   variant?: 'base' | 'outline';
 }
 
-export function Button({ title, variant = 'base', ...othersProps }: ButtonProps) {
-  const { styles, theme: { components } } = useStyles(stylesheet);
-
-  return ( 
-    <RectButton 
-      style={[styles.container, components.button[variant]]} 
-      {...othersProps}
-    >
-      <Text style={[styles.text, components.buttonText[variant]]}>
-        {title}
-      </Text>
-    </RectButton>
-  )
-}
+export const Button = forwardRef(({ title, variant = 'base', ...othersProps }: ButtonProps, ref?: any) => {
+    const { styles, theme: { components } } = useStyles(stylesheet);
+  
+    return ( 
+      <RectButton 
+        style={[styles.container, components.button[variant]]} 
+        ref={ref}
+        {...othersProps}
+      >
+        <Text style={[styles.text, components.buttonText[variant]]}>
+          {title}
+        </Text>
+      </RectButton>
+    )
+  }
+);
