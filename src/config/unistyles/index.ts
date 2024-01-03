@@ -5,7 +5,7 @@ import {breakpoints} from './theme/breakpoints';
 
 export const {createStyleSheet, useStyles} = createUnistyles<
   typeof breakpoints,
-  typeof theme
+  Partial<typeof theme>
 >(breakpoints);
 
 export {theme};
