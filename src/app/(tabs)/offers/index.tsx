@@ -1,19 +1,19 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Link } from 'expo-router';
+import { Link } from 'expo-router'
+import React from 'react'
+import { View, Text } from 'react-native'
 
-import { Button } from '@/components/Button';
+import { Button } from '@/components/Button'
 
-export default function Offers() {
+export default function Offers () {
   return (
     <View style={{ flex: 1 }}>
       <Text>Ofertas</Text>
-      
+
       <View style={{ flex: 1, justifyContent: 'flex-end', padding: 16 }}>
         <Link href="/offers/detail" asChild>
           <Button title="Detalhes" />
         </Link>
       </View>
     </View>
-  );
+  )
 };
