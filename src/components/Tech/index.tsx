@@ -1,13 +1,13 @@
-import { Image, ImageProps } from 'react-native'
+import { Image, type ImageProps } from 'react-native'
 
-import { useStyles } from '@/config/unistyles';
+import { stylesheet } from './styles'
 
-import { stylesheet } from './styles';
+import { useStyles } from '@/config/unistyles'
 
-type TechProps = ImageProps;
+type TechProps = ImageProps
 
-export function Tech({ ...props }: TechProps) {
-  const { styles } = useStyles(stylesheet);
+export function Tech ({ ...props }: TechProps) {
+  const { styles } = useStyles(stylesheet)
 
   return (
     <Image style={styles.container} resizeMode='contain' {...props} />

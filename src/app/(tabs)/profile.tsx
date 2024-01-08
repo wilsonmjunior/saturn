@@ -1,6 +1,6 @@
-import { Slider } from "@/components/Slider";
+import { Slider } from '@/components/Slider'
 
-export default function Profile() {
+export default function Profile () {
   return (
     <Slider />
   )

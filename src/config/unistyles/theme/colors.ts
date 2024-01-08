@@ -9,6 +9,6 @@ export const colors = {
   shape: '#454242',
 
   icon: {
-    gray: '#999999', 
+    gray: '#999999'
   }
-};
+}

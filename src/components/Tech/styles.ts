@@ -1,7 +1,7 @@
-import { createStyleSheet } from "@/config/unistyles";
+import { createStyleSheet } from '@/config/unistyles'
 
 export const stylesheet = createStyleSheet(() => ({
   container: {
-    width: 200,
-  },
-}));
+    width: 200
+  }
+}))

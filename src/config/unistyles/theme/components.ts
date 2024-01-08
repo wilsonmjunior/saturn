@@ -1,22 +1,22 @@
-import {colors} from './colors';
+import { colors } from './colors'
 
 export const components = {
   button: {
     base: {
-      backgroundColor: colors.primary,
+      backgroundColor: colors.primary
     },
     outline: {
       backgroundColor: 'transparent',
       borderWidth: 2,
-      borderColor: colors.primary,
-    },
+      borderColor: colors.primary
+    }
   },
   buttonText: {
     base: {
-      color: colors.white,
+      color: colors.white
     },
     outline: {
-      color: colors.primary,
-    },
-  },
-} as const;
+      color: colors.primary
+    }
+  }
+} as const
