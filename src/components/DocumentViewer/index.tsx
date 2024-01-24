@@ -1,22 +1,25 @@
-import {WebView} from 'react-native-webview';
-import {Modal, View, Text, StyleSheet, Platform} from 'react-native';
 import { useEffect, useState } from 'react';
-import { useStyles } from '@/config/unistyles';
-import { stylesheet } from './styles';
+import {Modal, View, Text, Platform, StatusBar, ActivityIndicator} from 'react-native';
+import {WebView} from 'react-native-webview';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { useStyles } from '@/config/unistyles';
+
+import { stylesheet } from './styles';
 
 type FileExtension = 'pdf' | 'doc' | 'docx' | 'xls' | 'xlsx';
 
 type Props = {
   url: string;
   isVisible?: boolean;
-  showTransparent?: boolean;
   children?: React.ReactNode;
 }
 
-export function DocumentViewer({ url, isVisible, showTransparent, children }: Props) {
-  const { styles } = useStyles(stylesheet)
+export function DocumentViewer({ url, isVisible, children }: Props) {
+  const { styles, theme } = useStyles(stylesheet)
+
   const [webViewURL, setWebViewURL] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (url) {
@@ -29,26 +32,45 @@ export function DocumentViewer({ url, isVisible, showTransparent, children }: Pr
       } else {  
         setWebViewURL(url);
       } 
+
+      setLoading(false);
     }
   }, []);
 
   return (
-    <SafeAreaView style={styles.webView}>
-      <Modal
-        animationType={'slide'}
-        transparent={false}
-        visible={isVisible}>
-        {showTransparent ? (
-          <View style={styles.transparentView} />
-        ) : null}
-        
-        { url ?
-          <WebView source={{ uri: Platform.OS === 'android' ? webViewURL : url }} />
-          : <Text>No url found!</Text>
-        }
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar 
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
 
-        <View style={styles.button}>{children}</View>
-      </Modal>
+      {
+        loading ? (
+          <ActivityIndicator size="large" color={theme.colors?.primary} />
+        ) : (
+          <Modal
+            animationType={'slide'}
+            transparent
+            visible={isVisible}
+          >
+            
+            { url ?
+              <WebView 
+                source={{ uri: Platform.OS === 'android' ? webViewURL : url }} 
+                style={styles.webView}
+              />
+              : (
+                <View style={{ justifyContent: 'center' }}>
+                  <Text>No url found!</Text>
+                </View>
+              )
+            }
+
+            { children ? <View style={styles.button}>{children}</View> : null}
+          </Modal>
+        )
+      }
     </SafeAreaView>
   );
 }
