@@ -10,7 +10,7 @@ export default function Offers () {
       <Text>Ofertas</Text>
 
       <View style={{ flex: 1, justifyContent: 'flex-end', padding: 16 }}>
-        <Link href="/offers/detail" asChild>
+        <Link href="/offers/details" asChild>
           <Button title="Detalhes" />
         </Link>
       </View>
