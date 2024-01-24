@@ -3,6 +3,7 @@ import {Modal, View, Text, StyleSheet, Platform} from 'react-native';
 import { useEffect, useState } from 'react';
 import { useStyles } from '@/config/unistyles';
 import { stylesheet } from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type FileExtension = 'pdf' | 'doc' | 'docx' | 'xls' | 'xlsx';
 
@@ -13,7 +14,7 @@ type Props = {
   children?: React.ReactNode;
 }
 
-export function DocumentFileViewer({ url, isVisible, showTransparent, children }: Props) {
+export function DocumentViewer({ url, isVisible, showTransparent, children }: Props) {
   const { styles } = useStyles(stylesheet)
   const [webViewURL, setWebViewURL] = useState('');
 
@@ -32,7 +33,7 @@ export function DocumentFileViewer({ url, isVisible, showTransparent, children }
   }, []);
 
   return (
-    <View style={styles.webView}>
+    <SafeAreaView style={styles.webView}>
       <Modal
         animationType={'slide'}
         transparent={false}
@@ -48,6 +49,6 @@ export function DocumentFileViewer({ url, isVisible, showTransparent, children }
 
         <View style={styles.button}>{children}</View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }

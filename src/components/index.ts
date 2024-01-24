@@ -1,5 +1,5 @@
 export { Button } from './Button';
-export { DocumentFileViewer } from './DocumentFileViewer';
+export { DocumentViewer } from './DocumentViewer';
 export { Sheet } from './Sheet';
 export { Slider } from './Slider';
 export { Tech } from './Tech';
