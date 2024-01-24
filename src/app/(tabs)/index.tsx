@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { View } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 
-import { Sheet } from '@/components/Sheet'
+import { Sheet } from '@/components'
 import { createStyleSheet, useStyles } from '@/config/unistyles'
 
 const stylessheet = createStyleSheet(theme => ({

@@ -1,6 +1,6 @@
 import { View } from "react-native";
 
-import { DocumentFileViewer } from "@/components/DocumentFileViewer";
+import { DocumentFileViewer } from "@/components";
 
 export default function Details() {
   return (

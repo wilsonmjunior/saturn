@@ -9,7 +9,7 @@
     "plugins": [
       "expo-router"
     ],
-    "scheme": "myapp",
+    "scheme": "saturn",
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true

@@ -2,7 +2,7 @@ import { Link } from 'expo-router'
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components'
 
 export default function Offers () {
   return (
