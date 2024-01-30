@@ -7,6 +7,11 @@ export const stylesheet = createStyleSheet(theme => ({
   safeArea: {
     flex: 1,
   },
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   webView: {
     marginTop: Platform.OS === 'ios' ? getStatusBarHeight() + 10 : 0,
     marginBottom: getBottomSpace()

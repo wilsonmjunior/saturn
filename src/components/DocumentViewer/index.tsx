@@ -47,18 +47,21 @@ export function DocumentViewer({ url, isVisible, children }: Props) {
 
       {
         loading ? (
-          <ActivityIndicator size="large" color={theme.colors?.primary} />
+          <View style={styles.loading}>
+            <ActivityIndicator size="large" color={theme.colors?.primary} />
+          </View>
         ) : (
           <Modal
             animationType={'slide'}
             transparent
             visible={isVisible}
           >
-            
+            {/* <View style={{ height: 100, backgroundColor: 'green' }} /> */}
+
             { url ?
               <WebView 
                 source={{ uri: Platform.OS === 'android' ? webViewURL : url }} 
-                style={styles.webView}
+                // style={styles.webView}
               />
               : (
                 <View style={{ justifyContent: 'center' }}>

@@ -3,9 +3,11 @@ import { View } from "react-native";
 import { DocumentViewer } from "@/components";
 
 export default function Details() {
+  const url = "https://clicksign-sandbox-content.s3.amazonaws.com/2024/01/18/18/53/33/23c8a923-1bc5-4148-9040-696f00ec1c9d/24011859A6ZOVV.docx?X-Amz-Expires=299&X-Amz-Date=20240124T183445Z&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIB%2B8q6S65h39Vmb%2FWLT7vy1b7vlPIfPe8mP1qQprMaxRAiBQp9rQWx%2BQNd%2BUXGu9E5dYVOhJ11DOt2vFKxUN%2BMX6PCq6BQh7EAMaDDc0MDY2MjI3ODc5MyIMBgVbha%2B06Bney0YXKpcFo3EFhKPBNlrtVcNHc7ygvpjgoJRTqzdSoCmjXKBjEdM%2BxBhDieLsKNGQNdP9Y%2B70MH%2BC9nSpu25l1WSFqVXRfpAoZ5jssKRi6R8DHIoar0%2FL0623Lx7cQE8TJGdNgByZ1QArfKamqItyC%2BHFMdJmdnUPVKSUavi6nxTa31JL6iTHm5wXIba4L71%2FSo67FhrKh7LjFvn%2B%2BYiw9uxslJX3JAtB2bhHKmLpS6oFUxDCmDQew0In4yVvQPtgBOB9DOwwipZPf4%2ByKWBXcuaTtnhCDZUoZ9rBfnw%2Bo6qfl2RTWxfZ9qjC7oRrHnFPvim6vBV2Rrx%2Bj1iwXq7%2FZFuQF2mU3fYg0%2FcwsjkzYM2hw76Cl2h9dtW2464B6OTnn6%2FEZQ7tBc3%2BrIFtUiH3GEi8HpfIKmwLCcuZ9A0e9XzQ4rFuGwvMuRyy7%2BOT3%2FJp%2Brq%2B5YFG31MTzBJNJKIcD3Q62g7Hn1WRZq0yGCowYrjMqi83Oupfv5SjO5km1p%2FGDCEOmc1DsEG64h09xFc8qvAqSP4%2Fh28qezvTXDnQwvi%2F6fWkBYZgcjgysWqrABqVr5DQ8ySygAclRNkRYeGUE6CBLKTYUlDycBHr0dOLnszf7JtXmXxb4AyyWHiZuSiYyWPgKh5QtMS2e2RIlkbEdqUOZBU0Mg6uuri%2BHiDFEvanK787DjzvAZVcODXBJw61oiajw2tPULkfSTYp0pRRIA1stZf%2B3bYFQiLJ8kso5F2bdlEis2O4NM200kUGOGLD%2Bg%2FI%2BF5k5YwkdmawsEhqDn%2FF3MB8%2F5pqY7UC38V7bqudF0wJwWjEpi3LFmJE5knfN%2BcE%2FItVmiHabAzlLABcL6hFR0V8gm1BcI812nDLW8XF1qGLSFtYX2Dot6qAMNebxa0GOrIBkkWJ2XpjA6Vrf5TBHFVnaLFHes1LYCrq6v%2BZw%2B5R2qQAaLn6r2vnyZQm08sWW6TajE7j8pGcRDVq%2BNmE%2Fn9Il7XC9f7ZL7prpKPZ5lj08GoxXKtjz2UWIJWs8P23KcFXPucX913z%2FoZmRR5x%2FpGZ6%2Flh2ycUVC0EHP6dWz0X9onH5aI07TUwAWExJBe0F0fBFAI%2BQDU%2B5xhr%2BjPiKES9X2nVpVZyi1ADYEQ7iSKd3OzQfw%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA2Y4XJPKE6JN7Q7RY%2F20240124%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e194f4005e207872f86e676abd2e2408956f4148f6f4a48c74fb8fc7bdb19aed";
+
   return (
     <View style={{ flex: 1 }}>
-      <DocumentViewer url="https://calibre-ebook.com/downloads/demos/demo.docx" />
+      <DocumentViewer url={url} />
     </View>
   )
 }
