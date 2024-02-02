@@ -16,16 +16,14 @@ export function useStorageState<T>(keyValue: string): StorageStateResponse {
   const [state, setState] = useState<string | null>();
 
   useEffect(() => {
-    if (!loading) {
-      setLoading(true);
-
-      SecureStore.getItemAsync(keyValue).then(value => {
-        setState(value);
-      }).finally(() => {
-        setLoading(false);
-      });
-    }
-  }, [keyValue, loading]);
+    setLoading(true);
+  
+    SecureStore.getItemAsync(keyValue).then((value) => {
+      setState(value);
+    }).finally(() => {
+      setLoading(false);
+    });
+  }, [keyValue]);
 
   const setValue = useCallback(
     (value: string | null) => {
