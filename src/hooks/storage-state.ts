@@ -1,16 +1,5 @@
-import { useCallback, useEffect, useReducer } from "react";
+import { useCallback, useEffect, useState } from "react";
 import * as SecureStore from 'expo-secure-store';
-
-type UseStateHook<T> = [[boolean, T | null], (value: T | null) => void];
-
-function useAsyncState<T>(
-  initialValue: [boolean, T | null] = [true, null],
-): UseStateHook<T> {
-  return useReducer(
-    (state: [boolean, T | null], action: T | null = null): [boolean, T | null] => [false, action],
-    initialValue
-  ) as UseStateHook<T>;
-}
 
 export async function setStorageItem(key: string, value: string | null) {
   if (value == null) {
@@ -20,14 +9,23 @@ export async function setStorageItem(key: string, value: string | null) {
   }
 }
 
-export function useStorageState(keyValue: string): UseStateHook<string> {
-  const [state, setState] = useAsyncState<string>();
+type StorageStateResponse = [[boolean, string | null | undefined], (value: string | null) => void];
+
+export function useStorageState<T>(keyValue: string): StorageStateResponse {
+  const [loading, setLoading] = useState(false);
+  const [state, setState] = useState<string | null>();
 
   useEffect(() => {
-    SecureStore.getItemAsync(keyValue).then(value => {
-      setState(value);
-    });
-  }, [keyValue]);
+    if (!loading) {
+      setLoading(true);
+
+      SecureStore.getItemAsync(keyValue).then(value => {
+        setState(value);
+      }).finally(() => {
+        setLoading(false);
+      });
+    }
+  }, [keyValue, loading]);
 
   const setValue = useCallback(
     (value: string | null) => {
@@ -37,5 +35,5 @@ export function useStorageState(keyValue: string): UseStateHook<string> {
     [keyValue]
   );
 
-  return [state, setValue];
+  return [[loading, state], setValue];
 }
