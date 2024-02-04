@@ -1,6 +1,6 @@
-import { createStyleSheet } from '@/config/unistyles'
+import { createStyleSheet } from '@/config/unistyles';
 
-export const stylesheet = createStyleSheet(theme => ({
+export const stylesheet = createStyleSheet((theme) => ({
   container: {
     backgroundColor: theme.colors?.primary,
     padding: 12,
@@ -11,4 +11,4 @@ export const stylesheet = createStyleSheet(theme => ({
     color: theme.colors?.white,
     fontSize: 14
   }
-}))
+}));
