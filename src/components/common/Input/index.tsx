@@ -4,7 +4,7 @@ import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
 
-type InputProps = TextInputProps;
+export type InputProps = TextInputProps;
 
 export function Input({ ...props }: InputProps) {
   const { styles } = useStyles(stylesheet);
