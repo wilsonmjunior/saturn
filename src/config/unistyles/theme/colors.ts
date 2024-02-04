@@ -12,5 +12,7 @@ export const colors = {
 
   icon: {
     gray: '#999999'
-  }
+  },
+  
+  border: '#dedede',
 }

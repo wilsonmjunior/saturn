@@ -11,8 +11,8 @@ export function Input({ ...props }: InputProps) {
 
   return (
     <TextInput
-      style={styles.input}
       {...props}
+      style={[styles.input, props.style]}
     />
   );
 }

@@ -1,15 +1,11 @@
-import { Control, Controller, UseControllerProps } from 'react-hook-form';
-import { Text } from 'react-native';
+import {
+  Control,
+  FieldErrors,
+  FieldValues,
+  UseControllerProps
+} from 'react-hook-form';
 
-import { useStyles } from '@/config/unistyles';
-
-import { Input } from "../Input";
-
-import { stylesheet } from './styles';
-
-type Rules = {
-  required?: true | string;
-}[];
+import { FormInput } from './FormInput';
 
 type FieldType =  'text-input' | 'select' | 'date' | 'date-time' | 'time';
 
@@ -21,15 +17,18 @@ export type FormField = UseControllerProps & {
   };
 };
 
-type FormProps = {
-  fields: FormField[];
-  control: Control;
-  errors?: any;
+export interface FieldError {
+  message: string;
+  type: string;
 };
 
-export function Form({ fields, control, errors }: FormProps) {
-  const { styles } = useStyles(stylesheet);
+type FormProps<T> = {
+  fields: FormField[];
+  control: Control;
+  errors?: FieldErrors<FieldValues>;
+};
 
+export function Form<T>({ fields, control, errors }: FormProps<T>) {
   return (
     <> 
       {
@@ -40,31 +39,18 @@ export function Form({ fields, control, errors }: FormProps) {
             case 'date-time': return;
             case 'time': return;
             default: {
-              console.warn('beta');
               return (
-                <Controller
+                <FormInput
                   key={index}
                   control={control}
-                  name={field.name}
-                  rules={field.rules}
-                  render={({ field: { onChange, onBlur, value } }) => (
-                    <Input
-                      {...field.common}
-                      onChangeText={onChange}
-                      onBlur={onBlur}
-                      value={value}
-                    />
-                  )}
+                  errors={errors}
+                  field={field}
                 />
               )
             };
           }
         })
       }
-
-      {errors && Object.keys(errors).map((key, index) => (
-        <Text key={index} style={styles.errorText}>{errors[key].message}</Text>
-      ))}
     </>
   )
 }
