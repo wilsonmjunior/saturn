@@ -3,7 +3,7 @@ import { FontAwesome } from '@expo/vector-icons'
 import { Redirect, Tabs } from 'expo-router';
 import { UnistylesTheme } from 'react-native-unistyles'
 
-import { Loading } from '@/components/Loading';
+import { Loading } from '@/components/common/Loading';
 import { theme } from '@/config/unistyles'
 import { useSession } from '@/hooks/auth';
 

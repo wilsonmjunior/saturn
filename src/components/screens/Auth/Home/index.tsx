@@ -1,8 +1,7 @@
 import { View } from "react-native";
 import { useRouter } from "expo-router";
 
-import { Header } from "@/components/common";
-import { Button } from "@/components/Button";
+import { Button, Header } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
