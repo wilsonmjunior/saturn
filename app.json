@@ -7,15 +7,15 @@
       "**/*"
     ],
     "plugins": [
-      "expo-router"
-      // [
-      //   "expo-secure-store",
-      //   {
-      //     "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
-      //   }
-      // ]
+      "expo-router",
+      "expo-font"
     ],
     "scheme": "saturn",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#606c38"
+    },
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true

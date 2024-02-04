@@ -7,8 +7,7 @@ export const stylesheet = createStyleSheet({
   },
   buttonsWrapper: {
     flex: 1,
-    justifyContent: 'flex-end',
-    marginBottom: getBottomSpace() + 32,
+    justifyContent: 'center',
     marginHorizontal: 16,
     gap: 8,
   }
