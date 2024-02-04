@@ -25,7 +25,7 @@ export default function TabsLayout () {
   }
 
   if (!session) {
-    return <Redirect href="/sign-in" />;
+    return <Redirect href="/home" />;
   }
 
   return (
