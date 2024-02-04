@@ -1,11 +1,11 @@
 import { Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useRouter } from "expo-router";
 import { Feather } from "@expo/vector-icons";
 
 import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useRouter } from "expo-router";
 
 type HeaderProps = {
   children?: React.ReactNode;
@@ -20,15 +20,19 @@ export function Header({ children, title, back = true }: HeaderProps) {
 
   return (
     <View style={styles.container}>
-      {!children || back ? ( 
+      {!children ? ( 
         <View style={styles.content}>
-          <TouchableOpacity onPress={() => router.back()}>
-            <Feather name="arrow-left" size={24} color={theme.colors?.white} />
-          </TouchableOpacity>
+          { back ? ( 
+            <TouchableOpacity onPress={() => router.back()}>
+              <Feather name="arrow-left" size={24} color={theme.colors?.white} />
+            </TouchableOpacity>
+          ) : null }
 
-          <View style={styles.titleWrapper}>
-            <Text style={styles.title}>{title}</Text>
-          </View>
+          { title ? ( 
+            <View style={styles.titleWrapper}>
+              <Text style={styles.title}>{title}</Text>
+            </View>
+          ) : null }
         </View>
       ) : null}
 
