@@ -1,10 +1,33 @@
+import { View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
-import { Tabs } from 'expo-router'
+import { Redirect, Tabs } from 'expo-router';
 import { UnistylesTheme } from 'react-native-unistyles'
 
+import { Loading } from '@/components/Loading';
 import { theme } from '@/config/unistyles'
+import { useSession } from '@/hooks/auth';
 
 export default function TabsLayout () {
+  const { session, isLoading } = useSession();
+
+  if (isLoading) {
+    return (
+      <View 
+        style={{ 
+          flex: 1, 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+        }}
+      >
+        <Loading />
+      </View>
+    );
+  }
+
+  if (!session) {
+    return <Redirect href="/sign-in" />;
+  }
+
   return (
     <UnistylesTheme theme={theme}>
       <Tabs screenOptions={{ headerShown: false }}>

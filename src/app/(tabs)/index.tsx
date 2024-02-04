@@ -1,10 +1,11 @@
 import { Ionicons } from '@expo/vector-icons'
 import { useState } from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 
 import { Sheet } from '@/components'
 import { createStyleSheet, useStyles } from '@/config/unistyles'
+import { useSession } from '@/hooks'
 
 const stylessheet = createStyleSheet(theme => ({
   container: {
@@ -21,6 +22,8 @@ const stylessheet = createStyleSheet(theme => ({
 
 export default function Home () {
   const [openSheet, setOpenSheet] = useState(false)
+
+  const { signOut } = useSession()
 
   const { styles, theme } = useStyles(stylessheet)
 
@@ -40,6 +43,14 @@ export default function Home () {
           size={24}
         />
       </RectButton>
+
+      <Text
+        onPress={() => {
+          signOut();
+        }}
+      >
+        Sign Out
+      </Text>
 
       { openSheet ? <Sheet onClose={handleToggleSheet} /> : null}
     </View>
