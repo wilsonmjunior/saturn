@@ -17,7 +17,7 @@ export function SignIn() {
 
   return (
     <View style={styles.container}>
-      <Header title="Login" back={false} />
+      <Header title="Login" />
 
       <View style={styles.content}>
         <Input placeholder="E-mail" />
