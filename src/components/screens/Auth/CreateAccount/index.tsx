@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { View } from "react-native";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "expo-router";
 
-import { Button, Form, FormField, Header } from "@/components/common";
+import { Button, Form, FormField, Header, Switch } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
@@ -46,6 +47,8 @@ const formFields = [
 ] as FormField[];
 
 export function CreateAccount() {
+  const [menuItem, setMenuItem] = useState("");
+  
   const { 
     control, 
     formState: { 
@@ -62,11 +65,17 @@ export function CreateAccount() {
     console.warn('create data: ', data);
   };
 
+  const handleToggle = (value: string) => {
+    setMenuItem(value);
+  };
+
   return (
     <View style={styles.container}>
       <Header title="Sua Conta" />
       
       <View style={styles.content}>
+        <Switch active={menuItem} onToggle={handleToggle} />
+
         <Form 
           fields={formFields}
           control={control}
