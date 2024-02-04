@@ -9,12 +9,12 @@ export const stylesheet = createStyleSheet({
   content: {
     margin: 16,
     gap: 8,
+    flex: 1,
   },
   buttonsWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: getBottomSpace() + 32,
-    marginHorizontal: 16,
+    marginBottom: getBottomSpace() + 16,
     gap: 8,
   }
 });

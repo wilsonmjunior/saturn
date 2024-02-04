@@ -1,22 +1,82 @@
 import { View } from "react-native";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "expo-router";
 
-import { Header, Input } from "@/components/common";
+import { Button, Form, FormField, Header } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
 
+type CreateAccountData = {
+  name: string;
+  age: number;
+  email: string;
+  cellphone: string;
+}
+
+const formFields = [
+  {
+    name: "name",
+    rules: { required: 'Nome obrigatório' },
+    common: {
+      label: "Nome",
+      type: "text-input",
+      placeholder: "Nome",
+    }
+  },
+  // {
+  //   name: "age",
+  //   label: "Idade",
+  //   type: "text-input",
+  //   placeholder: "Idade",
+  // },
+  // {
+  //   name: "email",
+  //   label: "E-mail",
+  //   type: "text-input",
+  //   placeholder: "E-mail",
+  //   rules: { required: "This field is required" }
+  // },
+  // {
+  //   name: "cellphone",
+  //   label: "Celular",
+  //   type: "text-input",
+  //   placeholder: "Celular"
+  // },
+] as FormField[];
+
 export function CreateAccount() {
+  const { 
+    control, 
+    formState: { 
+      errors,
+    }, 
+    handleSubmit,
+  } = useForm();
+
+  const router = useRouter();
+
   const { styles } = useStyles(stylesheet);
+
+  const handleCreateAccount: SubmitHandler<CreateAccountData> = (data) => {
+    console.warn('create data: ', data);
+  };
 
   return (
     <View style={styles.container}>
-      <Header title="Cadastro" />
+      <Header title="Sua Conta" />
       
       <View style={styles.content}>
-        <Input placeholder="Nome" />
-        <Input placeholder="E-mail" />
-        <Input placeholder="Celular" />
-        <Input placeholder="Senha" secureTextEntry />
+        <Form 
+          fields={formFields}
+          control={control}
+          errors={errors}
+        />
+
+        <View style={styles.buttonsWrapper}>
+          <Button title="Salvar" onPress={() => handleSubmit(handleCreateAccount)} /> 
+          <Button title="Voltar" variant="outline" onPress={() => router.back()} /> 
+        </View>
       </View>
     </View>
   )
