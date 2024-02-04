@@ -1,7 +1,7 @@
-import { Slider } from '@/components'
+import { Profile } from '@/components/screens'
 
-export default function Profile () {
+export default function ProfileScreen() {
   return (
-    <Slider />
+    <Profile />
   )
 };

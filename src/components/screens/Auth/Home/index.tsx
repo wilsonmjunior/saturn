@@ -13,7 +13,7 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Header title="Login" back={false} />
+      <Header back={false} />
       
       <View style={styles.buttonsWrapper}>
         <Button 
