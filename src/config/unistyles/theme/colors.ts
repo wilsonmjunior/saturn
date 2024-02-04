@@ -8,6 +8,8 @@ export const colors = {
   background: '#222222',
   shape: '#454242',
 
+  error: '#ff0000',
+
   icon: {
     gray: '#999999'
   }
