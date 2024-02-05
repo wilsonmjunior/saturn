@@ -7,36 +7,18 @@ import { useStyles } from "@/config/unistyles";
 
 import { stylesheet } from "./styles";
 
-type HeaderProps = {
-  children?: React.ReactNode;
-  title?: string;
-  back?: boolean;
-};
-
-export function Header({ children, title, back = true }: HeaderProps) {
+export function Header() {
   const router = useRouter(); 
 
   const { styles, theme } = useStyles(stylesheet);
 
   return (
     <View style={styles.container}>
-      {!children ? ( 
-        <View style={styles.content}>
-          { back ? ( 
-            <TouchableOpacity onPress={() => router.back()}>
-              <Feather name="arrow-left" size={24} color={theme.colors?.white} />
-            </TouchableOpacity>
-          ) : null }
-
-          { title ? ( 
-            <View style={styles.titleWrapper}>
-              <Text style={styles.title}>{title}</Text>
-            </View>
-          ) : null }
-        </View>
-      ) : null}
-
-      {children}
+      <View style={styles.content}>
+        <TouchableOpacity onPress={() => router.back()}>
+          <Feather name="chevron-left" size={24} color={theme.colors?.black} />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
