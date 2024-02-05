@@ -1,7 +1,7 @@
 import { createStyleSheet } from "@/config/unistyles";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 
-export const stylesheet = createStyleSheet({
+export const stylesheet = createStyleSheet((theme) => ({
   container: {
     flex: 1,
   },
@@ -10,6 +10,15 @@ export const stylesheet = createStyleSheet({
     gap: 8,
     marginHorizontal: 16,
   },
+  forgotPassword: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+  },
+  forgotPasswordText: {
+    color: theme.colors?.primary,
+  },
   buttonsWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -17,4 +26,4 @@ export const stylesheet = createStyleSheet({
     marginHorizontal: 16,
     gap: 8,
   }
-});
+}));
