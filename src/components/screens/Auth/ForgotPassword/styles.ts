@@ -7,7 +7,7 @@ export const stylesheet = createStyleSheet({
   content: {
     marginTop: 32, 
     marginHorizontal: 16,
-    gap: 8,
+    gap: 16,
   },
   titleWrapper: {
     alignItems: 'center',

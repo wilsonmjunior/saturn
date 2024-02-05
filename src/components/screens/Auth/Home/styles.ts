@@ -8,6 +8,6 @@ export const stylesheet = createStyleSheet({
     flex: 1,
     justifyContent: 'center',
     marginHorizontal: 16,
-    gap: 8,
+    gap: 16,
   }
 });
