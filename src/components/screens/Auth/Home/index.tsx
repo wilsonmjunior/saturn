@@ -28,7 +28,7 @@ export function Home() {
           marginTop: 16,
         }}
         contentContainerStyle={{
-          gap: 8,
+          gap: 16,
           paddingBottom: getBottomSpace() + 16,
         }}
         showsVerticalScrollIndicator={false}
@@ -37,7 +37,7 @@ export function Home() {
           title="Cadastrar-se"
           icon="arrow-right"
           onPress={() => {
-            router.push('/sign-up');
+            router.push('/create-password'); // sign-up
           }}
         />
         

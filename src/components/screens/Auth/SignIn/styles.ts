@@ -7,7 +7,7 @@ export const stylesheet = createStyleSheet((theme) => ({
   },
   content: {
     marginTop: 16,
-    gap: 8,
+    gap: 16,
     marginHorizontal: 16,
   },
   forgotPassword: {
@@ -24,6 +24,6 @@ export const stylesheet = createStyleSheet((theme) => ({
     justifyContent: 'flex-end',
     marginBottom: getBottomSpace() + 32,
     marginHorizontal: 16,
-    gap: 8,
+    gap: 16,
   }
 }));

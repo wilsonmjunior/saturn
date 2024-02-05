@@ -9,7 +9,7 @@ export const stylesheet = createStyleSheet({
   content: {
     flex: 1,
     margin: 16,
-    gap: 8,
+    gap: 16,
   },
   switchWrapper: {
     marginTop: 24,
@@ -18,6 +18,6 @@ export const stylesheet = createStyleSheet({
     flex: 1,
     justifyContent: 'flex-end',
     marginBottom: getBottomSpace() + 16,
-    gap: 8,
+    gap: 16,
   }
 });
