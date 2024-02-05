@@ -1,5 +1,4 @@
 import { createStyleSheet } from "@/config/unistyles";
-import { getBottomSpace } from "react-native-iphone-x-helper";
 
 export const stylesheet = createStyleSheet({
   container: {

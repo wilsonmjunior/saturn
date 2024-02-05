@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { useRouter } from "expo-router";
 
 import { Button, Header, Input } from "@/components/common";
@@ -21,6 +21,15 @@ export function SignIn() {
       <View style={styles.content}>
         <Input placeholder="E-mail" />
         <Input placeholder="Senha" />
+
+        <View style={styles.forgotPassword}>
+          <Text 
+            style={styles.forgotPasswordText}
+            onPress={() => router.replace('/forgot-password')}
+          >
+            Esqueceu sua senha
+          </Text>
+        </View>
       </View>
 
       <View style={styles.buttonsWrapper}>

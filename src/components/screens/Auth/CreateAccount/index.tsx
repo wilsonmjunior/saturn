@@ -4,9 +4,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "expo-router";
 
 import {
+  BgHeader,
   Button,
   Form,
-  Header,
   Switch,
 } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
@@ -46,11 +46,13 @@ export function CreateAccount() {
 
   return (
     <View style={styles.container}>
-      <Header title="Sua Conta" />
+      <BgHeader title="Crie sua conta">
+        <View style={styles.switchWrapper}>
+          <Switch active={menuItem} onToggle={handleToggle} />
+        </View>
+      </BgHeader>
       
       <View style={styles.content}>
-        <Switch active={menuItem} onToggle={handleToggle} />
-
         {
           menuItem === '1' ? (
             <>
@@ -61,8 +63,7 @@ export function CreateAccount() {
               />
     
               <View style={styles.buttonsWrapper}>
-                <Button title="Salvar" onPress={handleSubmit(handleCreateAccount)} /> 
-                <Button title="Voltar" variant="outline" onPress={() => router.back()} /> 
+                <Button title="Criar minha conta" onPress={handleSubmit(handleCreateAccount)} /> 
               </View>
             </>
           ) : (

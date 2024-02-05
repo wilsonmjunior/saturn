@@ -2,8 +2,7 @@ import { createStyleSheet } from "@/config/unistyles";
 
 export const stylesheet = createStyleSheet((theme) => ({
   container: {
-    minHeight: 120,
-    backgroundColor: theme.colors?.primary,
+    minHeight: 100,
   },
   content: {
     flex: 1,
@@ -12,13 +11,4 @@ export const stylesheet = createStyleSheet((theme) => ({
     marginBottom: 16,
     marginHorizontal: 16,
   },
-  titleWrapper: {
-    flex: 1,
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 18,
-    marginLeft: 16,
-    color: theme.colors?.white,
-  }
 }));
