@@ -6,15 +6,22 @@ export const stylesheet = createStyleSheet({
     flex: 1,
   },
   content: {
-    marginTop: 16,
-    gap: 8,
+    marginTop: 32, 
     marginHorizontal: 16,
+    gap: 8,
   },
-  buttonsWrapper: {
+  title: {
+    fontSize: 24,
+    textAlign: 'center',
+  },
+  label: {
+    marginTop: 16,
+    marginBottom: 16,
+  },
+  sendButtonWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
     marginBottom: getBottomSpace() + 32,
     marginHorizontal: 16,
-    gap: 8,
   }
 });
