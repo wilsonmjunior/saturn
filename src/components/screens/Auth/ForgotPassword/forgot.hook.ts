@@ -8,7 +8,7 @@ export function useForgotPassword() {
 
   const handleForgotPassword = useCallback(() => {
     if (document) {
-      return router.replace('/');
+      return router.replace('/confirm-forgot-password');
     } 
   }, [document]);
 
