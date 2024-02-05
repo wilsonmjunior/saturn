@@ -1,9 +1,11 @@
-import { View } from "react-native";
+import { ImageBackground, ScrollView, View } from "react-native";
 import { useRouter } from "expo-router";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
-import { Button, Header } from "@/components/common";
+import { Button } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 
+import { Header } from "./Header";
 import { stylesheet } from "./styles";
 
 export function Home() {
@@ -13,23 +15,33 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Header back={false} />
-      
-      <View style={styles.buttonsWrapper}>
-        <Button 
-          title="Login" 
-          onPress={() => {
-            router.push('/sign-in');
-          }}
-        />
+      <Header />
+
+      <ImageBackground 
+        source={{ uri: '' }} 
+        style={{ height: 180, backgroundColor: '#cecece' }} 
+      />
+
+      <ScrollView
+        style={{
+          marginHorizontal: 16,
+          marginTop: 16,
+        }}
+        contentContainerStyle={{
+          gap: 8,
+          paddingBottom: getBottomSpace() + 16,
+        }}
+        showsVerticalScrollIndicator={false}
+      >
         <Button
           title="Cadastrar-se"
-          variant="outline"
+          icon="arrow-right"
           onPress={() => {
             router.push('/sign-up');
           }}
         />
-      </View>
+        
+      </ScrollView>
     </View>
   )
 }
