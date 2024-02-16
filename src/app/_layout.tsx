@@ -13,6 +13,7 @@ import {
 
 import { theme } from "@/config/unistyles";
 import { SessionProvider } from "@/contexts";
+import { PortalProvider } from "@gorhom/portal";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -42,7 +43,9 @@ export default function Root() {
     >
       <SessionProvider>
         <UnistylesTheme theme={theme}>
-          <Slot />
+          <PortalProvider>
+            <Slot />
+          </PortalProvider>
         </UnistylesTheme>
       </SessionProvider>
     </GestureHandlerRootView>
