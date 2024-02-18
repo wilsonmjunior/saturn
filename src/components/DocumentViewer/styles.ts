@@ -1,27 +1,30 @@
-import { getStatusBarHeight, getBottomSpace } from 'react-native-iphone-x-helper'
+import { Platform } from "react-native";
+import {
+  getStatusBarHeight,
+  getBottomSpace,
+} from "react-native-iphone-x-helper";
 
-import { createStyleSheet } from '@/config/unistyles';
-import { Platform } from 'react-native';
+import { createStyleSheet } from "@/config/unistyles";
 
-export const stylesheet = createStyleSheet(theme => ({
+export const stylesheet = createStyleSheet((theme) => ({
   safeArea: {
     flex: 1,
   },
   loading: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
   webView: {
-    marginTop: Platform.OS === 'ios' ? getStatusBarHeight() + 10 : 0,
-    marginBottom: getBottomSpace()
+    marginTop: Platform.OS === "ios" ? getStatusBarHeight() + 10 : 0,
+    marginBottom: getBottomSpace(),
   },
   button: {
     backgroundColor: theme.colors?.white,
-    position: 'absolute',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: "absolute",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     right: 10,
     bottom: 10,
     borderRadius: 100,

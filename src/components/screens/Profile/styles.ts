@@ -1,4 +1,4 @@
-import { createStyleSheet } from '@/config/unistyles'
+import { createStyleSheet } from "@/config/unistyles";
 
 export const stylesheet = createStyleSheet(() => ({
   container: {
@@ -6,15 +6,15 @@ export const stylesheet = createStyleSheet(() => ({
   },
   slideWrapper: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: "row",
   },
   slide: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 16,
-    marginLeft: 16
+    marginLeft: 16,
   },
-  signoutWrapper: { 
+  signoutWrapper: {
     marginHorizontal: 16,
-    marginBottom: 16
+    marginVertical: 16,
   },
-}))
+}));

@@ -1,12 +1,12 @@
-import { ImageBackground, ScrollView, View } from "react-native";
 import { useRouter } from "expo-router";
+import { ImageBackground, ScrollView, View } from "react-native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
-
-import { Button } from "@/components/common";
-import { useStyles } from "@/config/unistyles";
 
 import { Header } from "./Header";
 import { stylesheet } from "./styles";
+
+import { Button } from "@/components/common";
+import { useStyles } from "@/config/unistyles";
 
 export function Home() {
   const router = useRouter();
@@ -17,9 +17,9 @@ export function Home() {
     <View style={styles.container}>
       <Header />
 
-      <ImageBackground 
-        source={{ uri: '' }} 
-        style={{ height: 180, backgroundColor: '#cecece' }} 
+      <ImageBackground
+        source={{ uri: "" }}
+        style={{ height: 180, backgroundColor: "#cecece" }}
       />
 
       <ScrollView
@@ -37,11 +37,10 @@ export function Home() {
           title="Cadastrar-se"
           icon="arrow-right"
           onPress={() => {
-            router.push('/create-password'); // sign-up
+            router.push("/create-password"); // sign-up
           }}
         />
-        
       </ScrollView>
     </View>
-  )
+  );
 }

@@ -9,13 +9,13 @@ export const stylesheet = createStyleSheet((theme) => ({
     minHeight: 140,
   },
   content: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: getStatusBarHeight() + 32,
   },
   titleWrapper: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 24,

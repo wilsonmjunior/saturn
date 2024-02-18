@@ -1,7 +1,5 @@
-import { SignIn } from '@/components/screens/Auth';
+import { SignIn } from "@/components/screens/Auth";
 
 export default function SignInScreen() {
-  return (
-    <SignIn />
-  );
+  return <SignIn />;
 }

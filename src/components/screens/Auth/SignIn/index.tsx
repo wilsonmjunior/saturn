@@ -1,11 +1,11 @@
-import { Text, View } from "react-native";
 import { useRouter } from "expo-router";
+import { Text, View } from "react-native";
+
+import { stylesheet } from "./styles";
 
 import { Button, Header, Input } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 import { useSession } from "@/hooks";
-
-import { stylesheet } from "./styles";
 
 export function SignIn() {
   const router = useRouter();
@@ -23,9 +23,9 @@ export function SignIn() {
         <Input placeholder="Senha" />
 
         <View style={styles.forgotPassword}>
-          <Text 
+          <Text
             style={styles.forgotPasswordText}
-            onPress={() => router.replace('/forgot-password')}
+            onPress={() => router.replace("/forgot-password")}
           >
             Esqueceu sua senha
           </Text>
@@ -33,14 +33,14 @@ export function SignIn() {
       </View>
 
       <View style={styles.buttonsWrapper}>
-        <Button 
+        <Button
           title="Entrar"
           onPress={() => {
             signIn();
-            router.replace('/');
+            router.replace("/");
           }}
         />
       </View>
     </View>
-  )
+  );
 }

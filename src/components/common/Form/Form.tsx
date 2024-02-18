@@ -2,12 +2,12 @@ import {
   Control,
   FieldErrors,
   FieldValues,
-  UseControllerProps
-} from 'react-hook-form';
+  UseControllerProps,
+} from "react-hook-form";
 
-import { FormInput } from './FormInput';
+import { FormInput } from "./FormInput";
 
-type FieldType =  'text-input' | 'select' | 'date' | 'date-time' | 'time';
+type FieldType = "text-input" | "select" | "date" | "date-time" | "time";
 
 export type FormField = UseControllerProps & {
   common: {
@@ -20,7 +20,7 @@ export type FormField = UseControllerProps & {
 export interface FieldError {
   message: string;
   type: string;
-};
+}
 
 type FormProps<T> = {
   fields: FormField[];
@@ -30,27 +30,29 @@ type FormProps<T> = {
 
 export function Form<T>({ fields, control, errors }: FormProps<T>) {
   return (
-    <> 
-      {
-        fields.map((field, index) => {
-          switch (field.common.type) { 
-            case 'select': return;
-            case 'date': return;
-            case 'date-time': return;
-            case 'time': return;
-            default: {
-              return (
-                <FormInput
-                  key={index}
-                  control={control}
-                  errors={errors}
-                  field={field}
-                />
-              )
-            };
+    <>
+      {fields.map((field, index) => {
+        switch (field.common.type) {
+          case "select":
+            return;
+          case "date":
+            return;
+          case "date-time":
+            return;
+          case "time":
+            return;
+          default: {
+            return (
+              <FormInput
+                key={index}
+                control={control}
+                errors={errors}
+                field={field}
+              />
+            );
           }
-        })
-      }
+        }
+      })}
     </>
-  )
+  );
 }

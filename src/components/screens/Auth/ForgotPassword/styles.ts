@@ -5,12 +5,12 @@ export const stylesheet = createStyleSheet({
     flex: 1,
   },
   content: {
-    marginTop: 32, 
+    marginTop: 32,
     marginHorizontal: 16,
     gap: 16,
   },
   titleWrapper: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 24,

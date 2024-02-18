@@ -1,1 +1,1 @@
-export { SessionProvider, AuthContext } from './auth';
+export { SessionProvider, AuthContext } from "./auth";

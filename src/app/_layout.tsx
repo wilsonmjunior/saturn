@@ -1,19 +1,19 @@
-import { useCallback } from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { UnistylesTheme } from "react-native-unistyles";
-import { Slot, SplashScreen } from "expo-router";
-import { useFonts } from "expo-font";
 import {
   Inter_300Light,
   Inter_400Regular,
   Inter_500Medium,
   Inter_600SemiBold,
   Inter_700Bold,
-} from '@expo-google-fonts/inter';
+} from "@expo-google-fonts/inter";
+import { PortalProvider } from "@gorhom/portal";
+import { useFonts } from "expo-font";
+import { Slot, SplashScreen } from "expo-router";
+import { useCallback } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { UnistylesTheme } from "react-native-unistyles";
 
 import { theme } from "@/config/unistyles";
 import { SessionProvider } from "@/contexts";
-import { PortalProvider } from "@gorhom/portal";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,10 +37,7 @@ export default function Root() {
   }
 
   return (
-    <GestureHandlerRootView
-      style={{ flex: 1 }} 
-      onLayout={onLayoutRootView}
-    >
+    <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <SessionProvider>
         <UnistylesTheme theme={theme}>
           <PortalProvider>

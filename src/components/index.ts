@@ -1,3 +1,2 @@
-export { DocumentViewer } from './DocumentViewer';
-export { Sheet } from './Sheet';
-export { Tech } from './Tech';
+export { DocumentViewer } from "./DocumentViewer";
+export { Sheet } from "./Sheet";

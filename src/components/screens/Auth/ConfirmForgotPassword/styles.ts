@@ -1,18 +1,19 @@
-import { createStyleSheet } from "@/config/unistyles";
 import { getBottomSpace } from "react-native-iphone-x-helper";
+
+import { createStyleSheet } from "@/config/unistyles";
 
 export const stylesheet = createStyleSheet({
   container: {
     flex: 1,
   },
   content: {
-    marginTop: 32, 
+    marginTop: 32,
     marginHorizontal: 16,
     gap: 16,
   },
   title: {
     fontSize: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
   label: {
     marginTop: 16,
@@ -20,8 +21,8 @@ export const stylesheet = createStyleSheet({
   },
   sendButtonWrapper: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
     marginBottom: getBottomSpace() + 32,
     marginHorizontal: 16,
-  }
+  },
 });

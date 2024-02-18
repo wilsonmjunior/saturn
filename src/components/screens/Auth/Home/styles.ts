@@ -6,8 +6,8 @@ export const stylesheet = createStyleSheet({
   },
   buttonsWrapper: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     marginHorizontal: 16,
     gap: 16,
-  }
+  },
 });

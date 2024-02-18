@@ -2,13 +2,12 @@ import { useMemo } from "react";
 import { Control, Controller, FieldErrors, FieldValues } from "react-hook-form";
 import { Text } from "react-native";
 
-import { useStyles } from "@/config/unistyles";
-
 import { Input, InputProps } from "../../Input";
-
 import { FormField } from "../Form";
 
 import { stylesheet } from "./styles";
+
+import { useStyles } from "@/config/unistyles";
 
 type FormInputProps = InputProps & {
   control: Control;
@@ -19,9 +18,10 @@ type FormInputProps = InputProps & {
 export function FormInput({ control, errors, field }: FormInputProps) {
   const { styles, theme } = useStyles(stylesheet);
 
-  const message = useMemo(() => 
-    errors ? errors[field.name]?.message : '',
-  [errors, field.name]);
+  const message = useMemo(
+    () => (errors ? errors[field.name]?.message : ""),
+    [errors, field.name],
+  );
 
   return (
     <>
@@ -35,21 +35,20 @@ export function FormInput({ control, errors, field }: FormInputProps) {
             onChangeText={onChange}
             onBlur={onBlur}
             value={value}
-            style={{ 
-              borderWidth: 1, 
-              borderColor: errors && errors[field.name] ? theme.colors?.error : theme.colors?.border,
+            style={{
+              borderWidth: 1,
+              borderColor:
+                errors && errors[field.name]
+                  ? theme.colors?.error
+                  : theme.colors?.border,
             }}
           />
         )}
       />
 
-      { 
-        message ? ( 
-          <Text style={styles.errorText}>
-            {message.toString()}
-          </Text>
-        ) : null 
-      }
+      {message ? (
+        <Text style={styles.errorText}>{message.toString()}</Text>
+      ) : null}
     </>
-  )
+  );
 }

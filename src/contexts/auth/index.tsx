@@ -7,19 +7,19 @@ type Auth = {
   signOut(): void;
   session?: string | null;
   isLoading: boolean;
-}
+};
 
 export const AuthContext = createContext({} as Auth);
 
 type SessionProviderProps = {
   children: React.ReactNode;
-}
+};
 
 export function SessionProvider({ children }: SessionProviderProps) {
-  const [[isLoading, session], setSession] = useStorageState('session');
-  
-  const signIn = useCallback(() => { 
-    setSession('xxx');
+  const [[isLoading, session], setSession] = useStorageState("session");
+
+  const signIn = useCallback(() => {
+    setSession("xxx");
   }, []);
 
   const signOut = useCallback(() => {
@@ -27,7 +27,7 @@ export function SessionProvider({ children }: SessionProviderProps) {
   }, []);
 
   return (
-    <AuthContext.Provider 
+    <AuthContext.Provider
       value={{
         isLoading,
         signIn,
@@ -37,5 +37,5 @@ export function SessionProvider({ children }: SessionProviderProps) {
     >
       {children}
     </AuthContext.Provider>
-  )
+  );
 }

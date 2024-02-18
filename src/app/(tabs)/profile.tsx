@@ -1,7 +1,5 @@
-import { Profile } from '@/components/screens'
+import { Profile } from "@/components/screens";
 
 export default function ProfileScreen() {
-  return (
-    <Profile />
-  )
-};
+  return <Profile />;
+}

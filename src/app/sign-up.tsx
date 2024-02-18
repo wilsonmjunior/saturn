@@ -1,8 +1,5 @@
-import { CreateAccount } from '@/components/screens/Auth';
-import { View } from 'react-native';
+import { CreateAccount } from "@/components/screens/Auth";
 
 export default function SignUpScreen() {
-  return (
-    <CreateAccount />
-  );
+  return <CreateAccount />;
 }

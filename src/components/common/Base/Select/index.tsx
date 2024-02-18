@@ -1,8 +1,14 @@
-import { useRef, useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 import { Portal } from "@gorhom/portal";
+import { useRef, useState } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  FlatList,
+} from "react-native";
+import { RectButton } from "react-native-gesture-handler";
 
 export type SelectProps = {
   selected?: string;
@@ -19,9 +25,18 @@ const items = [
   { name: "Item 6" },
 ];
 
-export function Select({ selected, placeholder = "Selecione", onSelectItem }: SelectProps) {
+export function Select({
+  selected,
+  placeholder = "Selecione",
+  onSelectItem,
+}: SelectProps) {
   const [open, setOpen] = useState(false);
-  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  const [buttonPosition, setButtonPosition] = useState({
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+  });
 
   const inputRef = useRef(null);
 
@@ -42,15 +57,12 @@ export function Select({ selected, placeholder = "Selecione", onSelectItem }: Se
   return (
     <View>
       <View ref={inputRef}>
-        <RectButton
-          style={styles.button}
-          onPress={onOpen}
-        >
+        <RectButton style={styles.button} onPress={onOpen}>
           <Text>{selected || placeholder}</Text>
           <Feather name="chevron-down" size={16} />
         </RectButton>
       </View>
-      
+
       {open && (
         <Portal>
           <View
@@ -58,7 +70,7 @@ export function Select({ selected, placeholder = "Selecione", onSelectItem }: Se
               styles.dropdown,
               {
                 width: buttonPosition.width,
-                top: buttonPosition.y + buttonPosition.height, 
+                top: buttonPosition.y + buttonPosition.height,
                 left: buttonPosition.x,
               },
             ]}

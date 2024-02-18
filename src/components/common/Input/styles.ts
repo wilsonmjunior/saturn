@@ -8,6 +8,6 @@ export const stylesheet = createStyleSheet((theme) => ({
     borderColor: theme.colors?.border,
     borderRadius: 8,
     height: 56,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 }));

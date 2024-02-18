@@ -8,11 +8,11 @@ export const stylesheet = createStyleSheet((theme) => ({
   },
   header: {
     marginTop: getStatusBarHeight() + 48,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: theme.fontSize?.lg,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   content: {
     marginHorizontal: 16,
@@ -21,7 +21,7 @@ export const stylesheet = createStyleSheet((theme) => ({
   form: {
     gap: 16,
   },
-  buttonsWrapper: { 
+  buttonsWrapper: {
     marginTop: 32,
     gap: 8,
   },

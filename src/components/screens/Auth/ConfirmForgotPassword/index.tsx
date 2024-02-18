@@ -1,11 +1,10 @@
 import { Image, Text, View } from "react-native";
 
-import { Button, Header } from "@/components/common";
-import { useStyles } from "@/config/unistyles";
-
 import { stylesheet } from "./styles";
 
 import InterrogationImage from "@/assets/interrogation.png";
+import { Button, Header } from "@/components/common";
+import { useStyles } from "@/config/unistyles";
 
 export function ConfirmForgotPassword() {
   const { styles } = useStyles(stylesheet);
@@ -19,11 +18,11 @@ export function ConfirmForgotPassword() {
           Por onde quer receber o link para redefinir sua senha?
         </Text>
 
-        <View 
-          style={{ 
-            marginVertical: 16, 
-            alignItems: 'center', 
-            justifyContent: 'center',
+        <View
+          style={{
+            marginVertical: 16,
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Image
@@ -33,19 +32,18 @@ export function ConfirmForgotPassword() {
           />
         </View>
 
-        <View style={{ marginTop: 16, }}>
-          <Text style={{ fontWeight: 'bold' }}>E-mail</Text>
+        <View style={{ marginTop: 16 }}>
+          <Text style={{ fontWeight: "bold" }}>E-mail</Text>
         </View>
 
-        <View style={{ marginTop: 16, }}>
-          <Text style={{ fontWeight: 'bold' }}>Número do celular</Text>
+        <View style={{ marginTop: 16 }}>
+          <Text style={{ fontWeight: "bold" }}>Número do celular</Text>
         </View>
-
       </View>
 
       <View style={styles.sendButtonWrapper}>
-        <Button title='Enviar' />
+        <Button title="Enviar" />
       </View>
     </View>
-  )
+  );
 }

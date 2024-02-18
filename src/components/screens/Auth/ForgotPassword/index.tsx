@@ -1,11 +1,10 @@
 import { Text, View } from "react-native";
 
+import { useForgotPassword } from "./forgot.hook";
+import { stylesheet } from "./styles";
+
 import { Button, Header, Input } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
-
-import { useForgotPassword } from "./forgot.hook";
-
-import { stylesheet } from "./styles";
 
 export function ForgotPassword() {
   const { styles } = useStyles(stylesheet);
@@ -22,15 +21,15 @@ export function ForgotPassword() {
           <Text style={styles.label}>Confirme seu CPF para prosseguir</Text>
         </View>
 
-        <Input 
-          placeholder="Ex: 123.XXX.XXX-XX" 
-          onChangeText={(text) => setDocument(text)} 
+        <Input
+          placeholder="Ex: 123.XXX.XXX-XX"
+          onChangeText={(text) => setDocument(text)}
         />
-        
+
         <View style={{ marginTop: 16 }}>
           <Button title="Avançar" onPress={handleForgotPassword} />
         </View>
       </View>
     </View>
-  )
+  );
 }

@@ -1,23 +1,18 @@
 import { Text, View } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 
-import { useStyles } from "@/config/unistyles";
-
 import { stylesheet } from "./styles";
+
+import { useStyles } from "@/config/unistyles";
 
 type SwitchItemProps = {
   active: boolean;
   title: string;
   style: any;
   onPress(): void;
-}
+};
 
-export function SwitchItem({
-  title,
-  style,
-  active,
-  onPress,
-}: SwitchItemProps) {
+export function SwitchItem({ title, style, active, onPress }: SwitchItemProps) {
   const { styles, theme } = useStyles(stylesheet);
 
   return (
@@ -28,12 +23,9 @@ export function SwitchItem({
         ...style,
       }}
     >
-      <RectButton 
-        style={styles.button}
-        onPress={onPress}
-      >
-        <Text 
-          style={{ 
+      <RectButton style={styles.button} onPress={onPress}>
+        <Text
+          style={{
             color: active ? theme.colors?.white : theme.colors?.black,
           }}
         >
@@ -41,7 +33,7 @@ export function SwitchItem({
         </Text>
       </RectButton>
     </View>
-  )
+  );
 }
 
 type SwitchProps = {
@@ -55,23 +47,23 @@ export function Switch({ active, onToggle }: SwitchProps) {
   return (
     <View style={styles.container}>
       <SwitchItem
-        active={active === '1'} 
-        title="Para mim" 
-        onPress={() => onToggle("1")} 
+        active={active === "1"}
+        title="Para mim"
+        onPress={() => onToggle("1")}
         style={{
-          borderTopLeftRadius: 8, 
-          borderBottomLeftRadius: 8, 
-        }} 
+          borderTopLeftRadius: 8,
+          borderBottomLeftRadius: 8,
+        }}
       />
       <SwitchItem
-        active={active === '2'}
-        title="Para seu negócio" 
-        onPress={() => onToggle("2")} 
+        active={active === "2"}
+        title="Para seu negócio"
+        onPress={() => onToggle("2")}
         style={{
-          borderTopRightRadius: 8, 
-          borderBottomRightRadius: 8, 
-        }}   
+          borderTopRightRadius: 8,
+          borderBottomRightRadius: 8,
+        }}
       />
     </View>
-  )
+  );
 }

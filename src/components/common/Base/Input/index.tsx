@@ -1,19 +1,22 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 import {
   View,
   TextInput,
   Animated,
   StyleSheet,
-  TextInputProps
-} from 'react-native';
+  TextInputProps,
+} from "react-native";
 
 export type FloatingLabelInputProps = TextInputProps & {
   label: string;
 };
 
-export function FloatingLabelInput({ label, ...props }: FloatingLabelInputProps) {
+export function FloatingLabelInput({
+  label,
+  ...props
+}: FloatingLabelInputProps) {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const labelAnim = useRef(new Animated.Value(0)).current; // Animação para o label
 
   const handleFocus = () => {
@@ -37,7 +40,7 @@ export function FloatingLabelInput({ label, ...props }: FloatingLabelInputProps)
   };
 
   const labelStyle = {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: labelAnim.interpolate({
       inputRange: [0, 1],
@@ -49,15 +52,13 @@ export function FloatingLabelInput({ label, ...props }: FloatingLabelInputProps)
     }),
     color: labelAnim.interpolate({
       inputRange: [0, 1],
-      outputRange: ['#aaa', '#000'],
+      outputRange: ["#aaa", "#000"],
     }),
   };
 
   return (
     <View style={styles.container}>
-      <Animated.Text style={labelStyle}>
-        {label}
-      </Animated.Text>
+      <Animated.Text style={labelStyle}>{label}</Animated.Text>
       <TextInput
         {...props}
         style={styles.input}
@@ -68,7 +69,7 @@ export function FloatingLabelInput({ label, ...props }: FloatingLabelInputProps)
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    borderBottomColor: "#ddd",
     fontSize: 16,
   },
 });

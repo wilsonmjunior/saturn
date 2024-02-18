@@ -16,8 +16,8 @@ export const stylesheet = createStyleSheet({
   },
   buttonsWrapper: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
     marginBottom: getBottomSpace() + 16,
     gap: 16,
-  }
+  },
 });

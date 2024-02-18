@@ -1,19 +1,20 @@
-import { Button } from '@/components/common';
-import { View, Text } from 'react-native';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { View, Text } from "react-native";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
-export default function Offers () {
+import { Button } from "@/components/common";
+
+export default function Offers() {
   return (
-    <View 
-      style={{ 
+    <View
+      style={{
         flex: 1,
         marginHorizontal: 16,
         marginTop: getStatusBarHeight() + 32,
       }}
     >
       <Text>Ofertas</Text>
-      
-      <Button title='Detalhes' variant='outline' />
+
+      <Button title="Detalhes" variant="outline" />
     </View>
-  )
-};
+  );
+}
