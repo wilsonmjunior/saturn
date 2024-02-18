@@ -4,7 +4,7 @@ export const stylesheet = createStyleSheet((theme) => ({
   container: {
     flex: 1,
     height: "100%",
-    backgroundColor: theme.colors?.white,
+    backgroundColor: theme.colors?.primary,
   },
   button: {
     marginTop: 74,

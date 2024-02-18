@@ -1,6 +1,9 @@
+export { AnimatedAutoScroll } from "./AnimatedAutoScroll";
+export { AnimatedScroll } from "./AnimatedScroll";
 export { Button } from "./Button";
 export { DocumentViewer } from "./DocumentViewer";
 export { Header } from "./Header";
+export { HorizontalList } from "./HorizontalList";
 export { BgHeader } from "./BgHeader";
 export { Input, type InputProps } from "./Input";
 export { Loading } from "./Loading";
