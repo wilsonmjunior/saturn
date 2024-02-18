@@ -14,6 +14,19 @@ import { stylesheet } from "./styles";
 import { Header } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
 
+function Techs() {
+  return (
+    <>
+      <Tech source={require("@/assets/image-1.png")} />
+      <Tech source={require("@/assets/image-2.png")} />
+      <Tech source={require("@/assets/image-3.png")} />
+      <Tech source={require("@/assets/image-1.png")} />
+      <Tech source={require("@/assets/image-2.png")} />
+      <Tech source={require("@/assets/image-3.png")} />
+    </>
+  );
+}
+
 export function Profile() {
   const { styles } = useStyles(stylesheet);
 
@@ -38,25 +51,11 @@ export function Profile() {
     );
   }, []);
 
-  function Techs() {
-    return (
-      <>
-        <Tech source={require("@/assets/image-1.png")} />
-        <Tech source={require("@/assets/image-2.png")} />
-        <Tech source={require("@/assets/image-3.png")} />
-      </>
-    );
-  }
-
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.slideWrapper}>
-        <Animated.View style={[styles.slide, slideAnimatedStyle]}>
-          <Techs />
-        </Animated.View>
-
         <Animated.View style={[styles.slide, slideAnimatedStyle]}>
           <Techs />
         </Animated.View>

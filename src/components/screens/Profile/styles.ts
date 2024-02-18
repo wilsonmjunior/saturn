@@ -5,12 +5,11 @@ export const stylesheet = createStyleSheet(() => ({
     flex: 1,
   },
   slideWrapper: {
-    flex: 1,
     flexDirection: "row",
   },
   slide: {
     flexDirection: "row",
-    gap: 16,
+    gap: 4,
     marginLeft: 16,
   },
   signoutWrapper: {
