@@ -38,7 +38,7 @@ export function Select({
     height: 0,
   });
 
-  const inputRef = useRef(null);
+  const inputRef = useRef(null) as React.RefObject<View>;
 
   function onOpen() {
     setOpen(!open);
