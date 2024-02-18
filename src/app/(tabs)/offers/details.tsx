@@ -1,6 +1,6 @@
 import { View } from "react-native";
 
-import { DocumentViewer } from "@/components";
+import { DocumentViewer } from "@/components/common";
 
 export default function Details() {
   const url =

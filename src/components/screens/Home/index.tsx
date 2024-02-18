@@ -5,7 +5,7 @@ import { RectButton } from "react-native-gesture-handler";
 
 import { stylesheet } from "./styles";
 
-import { Sheet } from "@/components/Sheet";
+import { Sheet } from "@/components/common/Sheet";
 import { useStyles } from "@/config/unistyles";
 
 export function Home() {
