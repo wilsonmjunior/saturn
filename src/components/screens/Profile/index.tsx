@@ -11,8 +11,9 @@ import Animated, {
 import { Tech } from "./Tech";
 import { stylesheet } from "./styles";
 
-import { Header } from "@/components/common";
+import { Button, Header } from "@/components/common";
 import { useStyles } from "@/config/unistyles";
+import { useSession } from "@/hooks";
 
 function Techs() {
   return (
@@ -32,6 +33,8 @@ export function Profile() {
 
   const slideX = useSharedValue(0);
   const dimensions = useWindowDimensions();
+
+  const { signOut } = useSession();
 
   const slideAnimatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -54,6 +57,8 @@ export function Profile() {
   return (
     <View style={styles.container}>
       <Header />
+
+      <Button title="Sair" onPress={signOut} />
 
       <View style={styles.slideWrapper}>
         <Animated.View style={[styles.slide, slideAnimatedStyle]}>

@@ -7,10 +7,10 @@ export const stylesheet = createStyleSheet((theme) => ({
     justifyContent: "center",
     backgroundColor: theme.colors?.primary,
     padding: 16,
-    borderRadius: 8,
+    borderRadius: 12,
   },
   iconAlign: {
-    justifyContent: "space-between",
+    alignItems: "flex-end",
   },
   text: {
     color: theme.colors?.white,

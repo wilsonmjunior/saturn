@@ -1,5 +1,11 @@
 import { useMemo } from "react";
-import { Control, Controller, FieldErrors, FieldValues } from "react-hook-form";
+import {
+  Control,
+  Controller,
+  FieldErrors,
+  FieldValues,
+  UseControllerProps,
+} from "react-hook-form";
 import { Text } from "react-native";
 
 import { Input, InputProps } from "../../Input";
@@ -9,11 +15,12 @@ import { stylesheet } from "./styles";
 
 import { useStyles } from "@/config/unistyles";
 
-type FormInputProps = InputProps & {
-  control: Control;
-  errors?: FieldErrors<FieldValues>;
-  field: FormField;
-};
+type FormInputProps = InputProps &
+  UseControllerProps & {
+    control: Control;
+    errors?: FieldErrors<FieldValues>;
+    field: FormField;
+  };
 
 export function FormInput({ control, errors, field }: FormInputProps) {
   const { styles, theme } = useStyles(stylesheet);
