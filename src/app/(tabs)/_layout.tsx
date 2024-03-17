@@ -1,9 +1,9 @@
-import { FontAwesome } from "@expo/vector-icons";
 import { Redirect, Tabs } from "expo-router";
 import { View } from "react-native";
 import { UnistylesTheme } from "react-native-unistyles";
 
 import { Loading } from "@/components/common/Loading";
+import { TabBar } from "@/components/common/TabBar";
 import { theme } from "@/config/unistyles";
 import { useSession } from "@/hooks/auth";
 
@@ -30,32 +30,43 @@ export default function TabsLayout() {
 
   return (
     <UnistylesTheme theme={theme}>
-      <Tabs screenOptions={{ headerShown: false }}>
+      <Tabs
+        tabBar={(props) => <TabBar {...props} />}
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+        }}
+      >
         <Tabs.Screen
           name="home"
           options={{
-            title: "Inicio",
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome size={size} name="home" color={color} />
-            ),
+            tabBarActiveTintColor: theme.colors.primary,
+            tabBarInactiveTintColor: theme.colors.white,
+            tabBarActiveBackgroundColor: "#030D16",
           }}
         />
         <Tabs.Screen
           name="offers"
           options={{
-            title: "Ofertas",
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome size={size} name="cart-arrow-down" color={color} />
-            ),
+            tabBarActiveTintColor: theme.colors.primary,
+            tabBarInactiveTintColor: theme.colors.white,
+            tabBarActiveBackgroundColor: "#030D16",
+          }}
+        />
+        <Tabs.Screen
+          name="negotiations"
+          options={{
+            tabBarActiveTintColor: theme.colors.primary,
+            tabBarInactiveTintColor: theme.colors.white,
+            tabBarActiveBackgroundColor: "#030D16",
           }}
         />
         <Tabs.Screen
           name="profile"
           options={{
-            title: "Perfil",
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome size={size} name="user" color={color} />
-            ),
+            tabBarActiveTintColor: theme.colors.primary,
+            tabBarInactiveTintColor: theme.colors.white,
+            tabBarActiveBackgroundColor: "#030D16",
           }}
         />
       </Tabs>

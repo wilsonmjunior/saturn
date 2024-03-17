@@ -6,3 +6,4 @@ export { Loading } from "./Loading";
 export { Form, type FormField } from "./Form";
 export { Switch } from "./Switch";
 export { HistoryCard } from "./HistoryCard";
+export { TabBar } from "./TabBar";
