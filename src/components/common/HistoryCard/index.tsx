@@ -1,31 +1,24 @@
 import { Ionicons } from "@expo/vector-icons";
-import { Portal } from "@gorhom/portal";
 import { router } from "expo-router";
-import { useRef, useState } from "react";
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
-export function HistoryCard() {
-  const [openAction, setOpenAction] = useState(false);
-  const [actionPosition, setActionPosition] = useState({
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0,
-  });
+import { ActionMenu } from "./ActionMenu";
 
-  const actionViewRef = useRef(null) as React.RefObject<TouchableOpacity>;
+type HistoryCardProps = {
+  id: number;
+  isOpenActionMenu: boolean;
+  actionItems: string[];
+  onOpenMenu(value?: number): void;
+};
 
-  const handleOpen = () => {
-    setOpenAction((oldState) => !oldState);
-    if (actionViewRef.current) {
-      actionViewRef.current.measureInWindow((x, y, width, height) => {
-        setActionPosition({ x, y, width, height });
-      });
-    }
-  };
-
+export function HistoryCard({
+  id,
+  isOpenActionMenu,
+  onOpenMenu,
+  actionItems,
+}: HistoryCardProps) {
   const handleNavigate = () => {
-    setOpenAction(false);
+    onOpenMenu(undefined);
     router.push("/(tabs)/offers/details");
   };
 
@@ -77,41 +70,12 @@ export function HistoryCard() {
           </View>
         </View>
 
-        <TouchableOpacity
-          ref={actionViewRef}
-          style={{ marginLeft: 16, position: "relative" }}
-          onPress={handleOpen}
-        >
-          <Ionicons name="ellipsis-vertical" size={24} />
-
-          {openAction && (
-            <Portal>
-              <View
-                style={{
-                  minWidth: 150,
-                  padding: 8,
-                  backgroundColor: "#ffffff",
-                  borderWidth: 1,
-                  borderColor: "#cecece",
-                  borderRadius: 12,
-                  position: "absolute",
-                  top: actionPosition.y + actionPosition.height,
-                  right: 8,
-                }}
-              >
-                <Pressable
-                  style={{ padding: 6 }}
-                  onPress={() => console.warn("item 1")}
-                >
-                  <Text>Item 1</Text>
-                </Pressable>
-                <Pressable style={{ padding: 6 }}>
-                  <Text>Item 2</Text>
-                </Pressable>
-              </View>
-            </Portal>
-          )}
-        </TouchableOpacity>
+        <ActionMenu
+          id={id}
+          isOpen={isOpenActionMenu}
+          items={actionItems}
+          onOpen={onOpenMenu}
+        />
       </View>
     </Pressable>
   );
