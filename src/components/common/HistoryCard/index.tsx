@@ -2,11 +2,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { Portal } from "@gorhom/portal";
 import { router } from "expo-router";
 import { useRef, useState } from "react";
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
 export function HistoryCard() {
-  const [open, setOpen] = useState(false);
-  const actionViewRef = useRef(null) as React.RefObject<View>;
+  const [openAction, setOpenAction] = useState(false);
   const [actionPosition, setActionPosition] = useState({
     x: 0,
     y: 0,
@@ -14,13 +13,20 @@ export function HistoryCard() {
     height: 0,
   });
 
+  const actionViewRef = useRef(null) as React.RefObject<TouchableOpacity>;
+
   const handleOpen = () => {
-    setOpen(!open);
+    setOpenAction((oldState) => !oldState);
     if (actionViewRef.current) {
       actionViewRef.current.measureInWindow((x, y, width, height) => {
         setActionPosition({ x, y, width, height });
       });
     }
+  };
+
+  const handleNavigate = () => {
+    setOpenAction(false);
+    router.push("/(tabs)/offers/details");
   };
 
   return (
@@ -32,7 +38,7 @@ export function HistoryCard() {
         backgroundColor: "#fff",
         borderRadius: 16,
       }}
-      onPress={() => router.push("/(tabs)/offers/details")}
+      onPress={handleNavigate}
     >
       <View
         style={{
@@ -60,27 +66,25 @@ export function HistoryCard() {
             flex: 1,
             marginLeft: 16,
             gap: 8,
-            width: actionPosition.width,
-            top: actionPosition.y + actionPosition.height,
-            left: actionPosition.x,
           }}
         >
           <Text style={{ fontWeight: "600" }}>Wilson Junior</Text>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <Text style={{ fontWeight: "400" }}>Venda</Text>
+            <Text style={{ fontWeight: "400", color: "#a8a8a8" }}>Venda</Text>
             <Text style={{ fontWeight: "400" }}>R$ 1200</Text>
           </View>
         </View>
 
-        <View
+        <TouchableOpacity
           ref={actionViewRef}
           style={{ marginLeft: 16, position: "relative" }}
+          onPress={handleOpen}
         >
-          <Ionicons name="ellipsis-vertical" size={24} onPress={handleOpen} />
+          <Ionicons name="ellipsis-vertical" size={24} />
 
-          {open && (
+          {openAction && (
             <Portal>
               <View
                 style={{
@@ -91,8 +95,8 @@ export function HistoryCard() {
                   borderColor: "#cecece",
                   borderRadius: 12,
                   position: "absolute",
-                  right: 0,
-                  marginTop: 28,
+                  top: actionPosition.y + actionPosition.height,
+                  right: 8,
                 }}
               >
                 <Pressable
@@ -107,7 +111,7 @@ export function HistoryCard() {
               </View>
             </Portal>
           )}
-        </View>
+        </TouchableOpacity>
       </View>
     </Pressable>
   );

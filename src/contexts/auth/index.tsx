@@ -16,23 +16,23 @@ type SessionProviderProps = {
 };
 
 export function SessionProvider({ children }: SessionProviderProps) {
-  const [[isLoading, session], setSession] = useStorageState("session");
+  // const [[isLoading, session], setSession] = useStorageState("session");
 
   const signIn = useCallback(() => {
-    setSession("xxx");
+    // setSession("xxx");
   }, []);
 
   const signOut = useCallback(() => {
-    setSession(null);
+    // setSession(null);
   }, []);
 
   return (
     <AuthContext.Provider
       value={{
-        isLoading,
+        isLoading: false,
         signIn,
         signOut,
-        session,
+        session: "xxx",
       }}
     >
       {children}
