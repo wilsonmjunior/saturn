@@ -1,5 +1,5 @@
 import { Feather } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -8,8 +8,6 @@ import { stylesheet } from "./styles";
 import { useStyles } from "@/config/unistyles";
 
 export function Header() {
-  const router = useRouter();
-
   const { styles, theme } = useStyles(stylesheet);
 
   return (

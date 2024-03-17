@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
-import { Button } from "@/components/common";
+import { OffersHistory } from "@/components/screens/Offers";
 
 export default function Offers() {
   return (
@@ -9,12 +9,11 @@ export default function Offers() {
       style={{
         flex: 1,
         marginHorizontal: 16,
-        marginTop: getStatusBarHeight() + 32,
+        gap: 10,
+        marginTop: getStatusBarHeight() + 42,
       }}
     >
-      <Text>Ofertas</Text>
-
-      <Button title="Detalhes" variant="outline" />
+      <OffersHistory />
     </View>
   );
 }

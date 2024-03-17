@@ -25,14 +25,14 @@ export default function TabsLayout() {
   }
 
   if (!session) {
-    return <Redirect href="/home" />;
+    return <Redirect href="/" />;
   }
 
   return (
     <UnistylesTheme theme={theme}>
       <Tabs screenOptions={{ headerShown: false }}>
         <Tabs.Screen
-          name="index"
+          name="home"
           options={{
             title: "Inicio",
             tabBarIcon: ({ color, size }) => (
