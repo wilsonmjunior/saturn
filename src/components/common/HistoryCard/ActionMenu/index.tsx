@@ -1,13 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Portal } from "@gorhom/portal";
-import { useState, useRef } from "react";
+import { useState, useRef, Dispatch, SetStateAction } from "react";
 import { Pressable, Text, TouchableOpacity, View } from "react-native";
 
 type MenuProps = {
   id: number;
   isOpen: boolean;
   items: string[];
-  onOpen(value?: number): void;
+  onOpen: Dispatch<SetStateAction<number | undefined>>;
 };
 
 export function ActionMenu({ id, isOpen, items, onOpen }: MenuProps) {
@@ -21,7 +21,7 @@ export function ActionMenu({ id, isOpen, items, onOpen }: MenuProps) {
   const actionMenuRef = useRef(null) as React.RefObject<TouchableOpacity>;
 
   const handleOpenMenu = () => {
-    onOpen(id);
+    onOpen((oldState) => (oldState === id ? undefined : id));
 
     if (actionMenuRef?.current) {
       actionMenuRef.current.measureInWindow((x, y, width, height) => {
