@@ -1,4 +1,5 @@
 # Saturn - Developing
 
-<img src="https://github.com/wilsonmjunior/saturn/assets/11083214/33a484e9-7a70-4dd6-bfcf-25783157e7e2" width="300"><br />
-<img src="https://github.com/wilsonmjunior/saturn/assets/11083214/94df07c9-6420-4730-997b-9fd7d56d0636" width="300" />
+<img src="https://github.com/wilsonmjunior/saturn/assets/11083214/991a0513-127c-4bf2-9705-97467b1ac65a" width="200" /> 
+<img src="https://github.com/wilsonmjunior/saturn/assets/11083214/2a721285-8630-431d-887c-4ac54a8e46ac" width="200" /> 
+
