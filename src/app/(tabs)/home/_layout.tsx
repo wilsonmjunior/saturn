@@ -4,7 +4,7 @@ export default function OffersLayout() {
   return (
     <Stack initialRouteName="index" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
-      <Stack.Screen name="negotiations" />
+      <Stack.Screen name="documents" />
     </Stack>
   );
 }
