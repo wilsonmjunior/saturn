@@ -35,42 +35,6 @@ export function OffersHistory() {
           onOpenMenu={setOpenHistoryCardId}
           actionItems={["Editar", "Excluir"]}
         />
-        <HistoryCard
-          id={1}
-          isOpenActionMenu={openHistoryCardId === 1}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
-        <HistoryCard
-          id={2}
-          isOpenActionMenu={openHistoryCardId === 2}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
-        <HistoryCard
-          id={3}
-          isOpenActionMenu={openHistoryCardId === 3}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
-        <HistoryCard
-          id={1}
-          isOpenActionMenu={openHistoryCardId === 1}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
-        <HistoryCard
-          id={2}
-          isOpenActionMenu={openHistoryCardId === 2}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
-        <HistoryCard
-          id={3}
-          isOpenActionMenu={openHistoryCardId === 3}
-          onOpenMenu={setOpenHistoryCardId}
-          actionItems={["Editar", "Excluir"]}
-        />
       </ScrollView>
     </View>
   );
